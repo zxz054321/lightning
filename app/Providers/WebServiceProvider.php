@@ -6,6 +6,8 @@
 namespace App\Providers;
 
 use App\Foundation\ServiceProvider;
+use Phalcon\Mvc\View\Engine\Php;
+use Phalcon\Mvc\View\Engine\Volt;
 use Phalcon\Mvc\View\Simple;
 
 /**
@@ -25,9 +27,9 @@ class WebServiceProvider extends ServiceProvider
             $view = new Simple();
             $view->setViewsDir(VIEW_PATH.'/');
             $view->registerEngines([
-                '.phtml' => \Phalcon\Mvc\View\Engine\Php::class,
+                '.phtml' => Php::class,
                 '.volt'  => function ($view, $di) {
-                    $volt = new \Phalcon\Mvc\View\Engine\Volt($view, $di);
+                    $volt = new Volt($view, $di);
 
                     $volt->setOptions([
                         'compiledPath' => STORAGE_PATH.'/framework/views/',
