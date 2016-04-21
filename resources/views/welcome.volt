@@ -37,10 +37,10 @@
 <body>
 <div class="container">
     <div class="content">
-        <small>Version: <?= $version ?></small>
+        <small>Version: {{ version }}</small>
         <div class="title">Lightning</div>
-        <p><?= $motto ?></p>
-        <em><?= $author ?></em>
+        <p>{{ motto }}</p>
+        <em>{{ author }}</em>
     </div>
 </div>
 </body>
